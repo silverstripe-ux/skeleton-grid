@@ -1,0 +1,249 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+/* Table of Contents
+==================================================
+    
+    #Pixel Grid Variables
+    #Base Pixel Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    
+    #Fluid Grid Variables
+    #Base fluid Grid
+    #Tablet (Portrait) fluid
+    #Mobile (Portrait) fluid
+    #Mobile (landscape) fluid
+    
+    #Clearing */
+
+
+/* Pixel Grid Variables
+================================================== */
+
+$containerWidth : 960px; //Width of outer container
+$columnNumber : 16; //Number of columns in your grid system - REMEMBER if you add more columns add more CSS to @mixin columnClasses
+$gutterWidth : 20px; //Width of gutter - left and right outer gutters will be half this number as it works of margins
+
+@mixin columnWidth($width) { //This calculates the width of each column minus the margins - $width = the number of columns wide
+    width: (($containerWidth - $columnNumber * $gutterWidth) / $columnNumber ) * $width + (($width - 1) * $gutterWidth);
+}
+
+@mixin columnThirds() { //This calculates the width of a column which is a third of the total width
+    width: ($containerWidth - (3 * $gutterWidth)) / 3;
+}
+
+@mixin columnTwoThirds() { //This calculates the width of a column which is a two thirds of the total width
+    width: (($containerWidth - (3 * $gutterWidth)) / 3) * 2;
+}
+
+@mixin columnOffset($offset) { //This calculates the width of the offset - $offset = the number of columns the column is offset by
+    padding-left: ((($containerWidth - $columnNumber * $gutterWidth) / $columnNumber) + $gutterWidth) * $offset;
+}
+
+@mixin columnClasses() { //This section is repeated more than once - creating a mixin helps with code maintainance
+    .container .one.column,
+    .container .one.columns                     { @include columnWidth(1); }
+    .container .two.columns                     { @include columnWidth(2); }
+    .container .three.columns                   { @include columnWidth(3); }
+    .container .four.columns                    { @include columnWidth(4); }
+    .container .five.columns                    { @include columnWidth(5); }
+    .container .six.columns                     { @include columnWidth(6); }
+    .container .seven.columns                   { @include columnWidth(7); }
+    .container .eight.columns                   { @include columnWidth(8); }
+    .container .nine.columns                    { @include columnWidth(9); }
+    .container .ten.columns                     { @include columnWidth(10); }
+    .container .eleven.columns                  { @include columnWidth(11); }
+    .container .twelve.columns                  { @include columnWidth(12); }
+    .container .thirteen.columns                { @include columnWidth(13); }
+    .container .fourteen.columns                { @include columnWidth(14); }
+    .container .fifteen.columns                 { @include columnWidth(15); }
+    .container .sixteen.columns                 { @include columnWidth(16); }
+    // If you change the $columnNumber variable you will need to create additional CSS here to accomodate for the extra columns
+
+    .container .one-third.column                { @include columnThirds(); }
+    .container .two-thirds.column               { @include columnTwoThirds(); }
+
+    /* Offsets */
+    .container .offset-by-one                   { @include columnOffset(1); }
+    .container .offset-by-two                   { @include columnOffset(2); }
+    .container .offset-by-three                 { @include columnOffset(3); }
+    .container .offset-by-four                  { @include columnOffset(4); }
+    .container .offset-by-five                  { @include columnOffset(5); }
+    .container .offset-by-six                   { @include columnOffset(6); }
+    .container .offset-by-seven                 { @include columnOffset(7); }
+    .container .offset-by-eight                 { @include columnOffset(8); }
+    .container .offset-by-nine                  { @include columnOffset(9); }
+    .container .offset-by-ten                   { @include columnOffset(10); }
+    .container .offset-by-eleven                { @include columnOffset(11); }
+    .container .offset-by-twelve                { @include columnOffset(12); }
+    .container .offset-by-thirteen              { @include columnOffset(13); }
+    .container .offset-by-fourteen              { @include columnOffset(14); }
+    .container .offset-by-fifteen               { @include columnOffset(15); }
+    // If you change the $columnNumber variable you will need to create additional CSS here to accomodate for the extra columns
+}
+
+/* #Base Pixel Grid
+================================================== */
+
+    .container                                  { position: relative; width: $containerWidth; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: $gutterWidth / 2; margin-right: $gutterWidth / 2; }
+    .row                                        { margin-bottom: 20px; }
+
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+
+    /* Base Grid */
+    @include columnClasses();
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: $containerWidth - 1) {
+
+        $containerWidth : 768px; // variable changes for tablet width
+
+        .container                                  { width: $containerWidth; }
+        .container .column,
+        .container .columns                         { margin-left: $gutterWidth / 2; margin-right: $gutterWidth / 2;  }
+        .column.alpha, .columns.alpha               { margin-left: 0; margin-right: $gutterWidth / 2; }
+        .column.omega, .columns.omega               { margin-right: 0; margin-left: $gutterWidth / 2; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+        @include columnClasses();
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        
+        $containerWidth : 300px; // variable changes for mobile portait width
+
+        .container { width: $containerWidth; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: $containerWidth; }
+
+        /* Offsets */
+        .container .offset-by-one,
+        .container .offset-by-two,
+        .container .offset-by-three,
+        .container .offset-by-four,
+        .container .offset-by-five,
+        .container .offset-by-six,
+        .container .offset-by-seven,
+        .container .offset-by-eight,
+        .container .offset-by-nine,
+        .container .offset-by-ten,
+        .container .offset-by-eleven,
+        .container .offset-by-twelve,
+        .container .offset-by-thirteen,
+        .container .offset-by-fourteen,
+        .container .offset-by-fifteen { padding-left: 0; }
+
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        
+        $containerWidth : 420px; // variable changes for mobile landscape width
+
+        .container { width: $containerWidth; }
+        .container .columns,
+        .container .column { margin: 0; }
+
+        .container .one.column,
+        .container .one.columns,
+        .container .two.columns,
+        .container .three.columns,
+        .container .four.columns,
+        .container .five.columns,
+        .container .six.columns,
+        .container .seven.columns,
+        .container .eight.columns,
+        .container .nine.columns,
+        .container .ten.columns,
+        .container .eleven.columns,
+        .container .twelve.columns,
+        .container .thirteen.columns,
+        .container .fourteen.columns,
+        .container .fifteen.columns,
+        .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column { width: $containerWidth; }
+    }
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
