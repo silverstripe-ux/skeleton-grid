@@ -1,0 +1,25 @@
+@import 'variables';
+
+/* FUNCTIONS */
+
+@function strip-units($value) {
+	//when multiplying by a particular value it strips off the units so that it can be multiplied with a value of a different type.
+	@return $value / ($value * 0 + 1); // $grid-y (set in _variables.scss)
+}
+
+@function rem($remval, $base: $baseFontSize) {
+	// Function to take a rem unit value (doesn't require use of units eg: 1rem would just be 1) and divide it by a base value in order to
+	// return the size in pxs. Default base value is $baseFontSize (set in _variables.scss)
+	// rounds to the nearest whole number
+	@return round($remval * $base);
+}
+
+@function rem-line-height($remval) {
+	// uses rem function and multiplies it by the baseline height to get the unrounded lineheight in pixels 
+	// it then devides that number by grid-y height - this is then rounded to the nearest whole number
+	// lastly this is multiplied by the grid-y height to get a nice even lineheight value that is a 
+	// multiple of the grid-y height.
+	@return round((rem($remval) * strip-units($baseLineHeight))/$grid-y)*$grid-y;
+}
+
+

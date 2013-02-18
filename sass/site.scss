@@ -1,0 +1,27 @@
+/* This file imports all the relevant files for regular screen display
+ *
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/yourprojectname.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ */
+
+// compass mixins
+@import 'compass';
+
+// Base variables
+@import 'variables';
+
+// Functions
+@import 'functions';
+
+// Mixins
+@import 'mixins';
+
+// Skeleton Grid
+@import 'skeleton';
+@import 'skeleton-fluid';
+
+// typography
+@import 'typography';
+
+// Our main layout styles
+@import 'layout';

@@ -1,0 +1,288 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+@import 'compass';
+@import 'variables';
+
+/* Table of Content
+==================================================
+	#Reset & Basics
+	#Basic Styles
+	#Site Styles
+	#Typography
+	#Links
+	#Lists
+	#Images
+	#Buttons
+	#Forms
+	#Misc */
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block; }
+	body {
+		line-height: 1; }
+	ol, ul {
+		list-style: none; }
+	blockquote, q {
+		quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none; }
+	table {
+		border-collapse: collapse;
+		border-spacing: 0; }
+
+
+/* #Basic Styles
+================================================== */
+	body {
+		background: $white;
+		font-family:  $baseFontFamily;
+		// when using the rem and rem-line-height functions for body copy use the same (value) for both rem() and rem-line-height().
+		font-size: rem(1); //equivalent to 1x $baseFontSize - always use this for font-size - it acts like a rem unit.
+		line-height: rem-line-height(1); //when setting line-height always use this function - it acts like rem but converts units to px for old browsers
+		color: $baseFontColor;
+		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-text-size-adjust: 100%;
+
+		@media only screen and (max-width: 767px) {
+			line-height: rem-line-height(1.2); //increases line height for mobile
+		}
+ }
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		color: $grayDarker;
+		font-family: $serifFontFamily;
+		font-weight: normal; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	// when using the rem and rem-line-height functions for body copy and small headings use the same (value) for both.
+	// When dealing with larger headings the rem-line-height function will need a slightly smaller (value) as they need less line-height.
+	// The numbers below shouldn't need adjusting but feel free to have a play. The line height will always be a multiple of the $grid-y that 
+	// you would have set in the _variables.scss file.
+	h1 { 
+		font-size: rem(3); 
+		line-height: rem-line-height(2.5); 
+		margin-bottom: $grid-y*3;
+	}
+	h2 { 
+		font-size: rem(2.3); 
+		line-height: rem-line-height(1.9); 
+		margin-bottom: $grid-y*2; 
+	}
+	h3 { 
+		font-size: rem(1.9); 
+		line-height: rem-line-height(1.7); 
+		margin-bottom: $grid-y*2; 
+	}
+	// you will see that the rem() and rem-line-height() functions have the same values for the smaller headings.
+	h4 { 
+		font-size: rem(1.4); 
+		line-height: rem-line-height(1.4); 
+		margin-bottom: $grid-y; 
+	}
+	h5 { 
+		font-size: rem(1.15); 
+		line-height: rem-line-height(1.15); 
+	}
+	h6 { 
+		font-size: rem(1); 
+		line-height: rem-line-height(1); 
+	}
+	.subheader { color: $gray; }
+
+	p { margin: 0 0 $grid-y*4 0; }
+	p img { margin: 0; }
+	p.lead { font-size: rem(1.4); line-height: rem-line-height(1.4); color: $gray;  }
+
+	em { font-style: italic; }
+	strong { font-weight: bold; color: $grayDarker; }
+	small { font-size: rem(0.8); }
+
+/*	Blockquotes  */
+	blockquote, blockquote p { font-size: rem(1.15); line-height: rem-line-height(1.15); color: $gray; font-style: italic; }
+	blockquote { margin: 0 0 $grid-y*4; padding: $grid-y*2 20px 0 $grid-y*4; border-left: 1px solid $grayLight; }
+	blockquote cite { display: block; font-size: rem(0.8); color: $grayDark; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: $grayDark; }
+
+	hr { border: solid $grayLight; border-width: 1px 0 0; clear: both; margin: $grid-y*4 0 $grid-y*6; height: 0; }
+
+
+/* #Links
+================================================== */
+	a, a:visited { color: $grayDarker; text-decoration: underline; outline: 0; }
+	a:hover, a:focus { color: $black; }
+	p a, p a:visited { line-height: inherit; }
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: $grid-y*4; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: $grid-y 0 $grid-y 30px; font-size: rem(0.9);  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: $grid-y; }
+	li { line-height: rem-line-height(1); margin-bottom: $grid-y*3; }
+	ul.large li { line-height: rem-line-height(1.2); }
+	li p { line-height: rem-line-height(1.2); }
+
+/* #Images
+================================================== */
+
+	img.scale-with-grid {
+		max-width: 100%;
+		height: auto; }
+
+
+/* #Buttons
+================================================== */
+
+	.button,
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		background: $grayLighter; /* Old browsers */
+		@include background-image(linear-gradient(rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%));
+	  border: 1px solid $gray;
+	  border-top: 1px solid $grayLight;
+	  border-left: 1px solid $grayLight;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  color: $grayDark;
+	  display: inline-block;
+	  font-size: rem(0.7);
+	  text-decoration: none;
+	  @include text-shadow(0 1px rgba(255, 255, 255, .75));
+	  cursor: pointer;
+	  margin-bottom: $grid-y*4;
+	  line-height: normal;
+	  padding: $grid-y*2;
+	  font-family: $baseFontFamily }
+
+	.button:hover,
+	button:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	input[type="button"]:hover {
+		color: $grayDarker;
+		background: $grayLighter; /* Old browsers */
+		@include background-image(linear-gradient(rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%));
+	  border: 1px solid $gray;
+	  border-top: 1px solid $grayLight;
+	  border-left: 1px solid $grayLight; }
+
+	.button:active,
+	button:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	input[type="button"]:active {
+		border: 1px solid $grayDark;
+		background: $gray; /* Old browsers */
+		@include background-image(linear-gradient(rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%)); }
+
+	.button.full-width,
+	button.full-width,
+	input[type="submit"].full-width,
+	input[type="reset"].full-width,
+	input[type="button"].full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; }
+
+	/* Fix for odd Mozilla border & padding issues */
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+	}
+
+
+/* #Forms
+================================================== */
+
+	form {
+		margin-bottom: $grid-y*4; }
+	fieldset {
+		margin-bottom: $grid-y*4; }
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+		border: 1px solid $grayLight;
+		padding: $grid-y 4px;
+		outline: none;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font: $baseFontSize $baseFontFamily;
+		color: $gray;
+		margin: 0;
+		width: 210px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: $grid-y*4;
+		background: $white; }
+	select {
+		padding: 0; }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border: 1px solid $gray;
+ 		color: $grayDark;
+ 		@include box-shadow(0 0 3px rgba(0,0,0,.2)); }
+	textarea {
+		min-height: $grid-y*12; }
+	label,
+	legend {
+		display: block;
+		font-weight: bold;
+		font-size: rem(0.8);  }
+	select {
+		width: 220px; }
+	input[type="checkbox"] {
+		display: inline; }
+	label span,
+	legend span {
+		font-weight: normal;
+		font-size: rem(0.8);
+		color: $grayDark; }
+
+/* #Misc
+================================================== */
+	.remove-bottom { margin-bottom: 0 !important; }
+	.half-bottom { margin-bottom: $grid-y*2 !important; }
+	.add-bottom { margin-bottom: $grid-y*4 !important; }
+
+
