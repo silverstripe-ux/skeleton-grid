@@ -1,3 +1,4 @@
+/* SASSified version of Skeleton Framework Grid */
 /*
 * Skeleton V1.2
 * Copyright 2011, Dave Gamache
@@ -15,18 +16,12 @@
     #Mobile (Portrait)
     #Mobile (Landscape)
     
-    #Fluid Grid Variables
-    #Base fluid Grid
-    #Tablet (Portrait) fluid
-    #Mobile (Portrait) fluid
-    #Mobile (landscape) fluid
-    
     #Clearing */
 /* Pixel Grid Variables
 ================================================== */
 /* #Base Pixel Grid
 ================================================== */
-/* line 97, ../sass/skeleton.scss */
+/* line 93, ../sass/skeleton.scss */
 .container {
   position: relative;
   width: 960px;
@@ -34,7 +29,7 @@
   padding: 0;
 }
 
-/* line 99, ../sass/skeleton.scss */
+/* line 95, ../sass/skeleton.scss */
 .container .column,
 .container .columns {
   float: left;
@@ -43,186 +38,186 @@
   margin-right: 10px;
 }
 
-/* line 100, ../sass/skeleton.scss */
+/* line 96, ../sass/skeleton.scss */
 .row {
   margin-bottom: 20px;
 }
 
 /* Nested Column Classes */
-/* line 103, ../sass/skeleton.scss */
+/* line 99, ../sass/skeleton.scss */
 .column.alpha, .columns.alpha {
   margin-left: 0;
 }
 
-/* line 104, ../sass/skeleton.scss */
+/* line 100, ../sass/skeleton.scss */
 .column.omega, .columns.omega {
   margin-right: 0;
 }
 
 /* Base Grid */
-/* line 54, ../sass/skeleton.scss */
+/* line 50, ../sass/skeleton.scss */
 .container .one.column,
 .container .one.columns {
   width: 40px;
 }
 
-/* line 55, ../sass/skeleton.scss */
+/* line 51, ../sass/skeleton.scss */
 .container .two.columns {
   width: 100px;
 }
 
-/* line 56, ../sass/skeleton.scss */
+/* line 52, ../sass/skeleton.scss */
 .container .three.columns {
   width: 160px;
 }
 
-/* line 57, ../sass/skeleton.scss */
+/* line 53, ../sass/skeleton.scss */
 .container .four.columns {
   width: 220px;
 }
 
-/* line 58, ../sass/skeleton.scss */
+/* line 54, ../sass/skeleton.scss */
 .container .five.columns {
   width: 280px;
 }
 
-/* line 59, ../sass/skeleton.scss */
+/* line 55, ../sass/skeleton.scss */
 .container .six.columns {
   width: 340px;
 }
 
-/* line 60, ../sass/skeleton.scss */
+/* line 56, ../sass/skeleton.scss */
 .container .seven.columns {
   width: 400px;
 }
 
-/* line 61, ../sass/skeleton.scss */
+/* line 57, ../sass/skeleton.scss */
 .container .eight.columns {
   width: 460px;
 }
 
-/* line 62, ../sass/skeleton.scss */
+/* line 58, ../sass/skeleton.scss */
 .container .nine.columns {
   width: 520px;
 }
 
-/* line 63, ../sass/skeleton.scss */
+/* line 59, ../sass/skeleton.scss */
 .container .ten.columns {
   width: 580px;
 }
 
-/* line 64, ../sass/skeleton.scss */
+/* line 60, ../sass/skeleton.scss */
 .container .eleven.columns {
   width: 640px;
 }
 
-/* line 65, ../sass/skeleton.scss */
+/* line 61, ../sass/skeleton.scss */
 .container .twelve.columns {
   width: 700px;
 }
 
-/* line 66, ../sass/skeleton.scss */
+/* line 62, ../sass/skeleton.scss */
 .container .thirteen.columns {
   width: 760px;
 }
 
-/* line 67, ../sass/skeleton.scss */
+/* line 63, ../sass/skeleton.scss */
 .container .fourteen.columns {
   width: 820px;
 }
 
-/* line 68, ../sass/skeleton.scss */
+/* line 64, ../sass/skeleton.scss */
 .container .fifteen.columns {
   width: 880px;
 }
 
-/* line 69, ../sass/skeleton.scss */
+/* line 65, ../sass/skeleton.scss */
 .container .sixteen.columns {
   width: 940px;
 }
 
-/* line 72, ../sass/skeleton.scss */
+/* line 68, ../sass/skeleton.scss */
 .container .one-third.column {
   width: 300px;
 }
 
-/* line 73, ../sass/skeleton.scss */
+/* line 69, ../sass/skeleton.scss */
 .container .two-thirds.column {
   width: 600px;
 }
 
 /* Offsets */
-/* line 76, ../sass/skeleton.scss */
+/* line 72, ../sass/skeleton.scss */
 .container .offset-by-one {
   padding-left: 60px;
 }
 
-/* line 77, ../sass/skeleton.scss */
+/* line 73, ../sass/skeleton.scss */
 .container .offset-by-two {
   padding-left: 120px;
 }
 
-/* line 78, ../sass/skeleton.scss */
+/* line 74, ../sass/skeleton.scss */
 .container .offset-by-three {
   padding-left: 180px;
 }
 
-/* line 79, ../sass/skeleton.scss */
+/* line 75, ../sass/skeleton.scss */
 .container .offset-by-four {
   padding-left: 240px;
 }
 
-/* line 80, ../sass/skeleton.scss */
+/* line 76, ../sass/skeleton.scss */
 .container .offset-by-five {
   padding-left: 300px;
 }
 
-/* line 81, ../sass/skeleton.scss */
+/* line 77, ../sass/skeleton.scss */
 .container .offset-by-six {
   padding-left: 360px;
 }
 
-/* line 82, ../sass/skeleton.scss */
+/* line 78, ../sass/skeleton.scss */
 .container .offset-by-seven {
   padding-left: 420px;
 }
 
-/* line 83, ../sass/skeleton.scss */
+/* line 79, ../sass/skeleton.scss */
 .container .offset-by-eight {
   padding-left: 480px;
 }
 
-/* line 84, ../sass/skeleton.scss */
+/* line 80, ../sass/skeleton.scss */
 .container .offset-by-nine {
   padding-left: 540px;
 }
 
-/* line 85, ../sass/skeleton.scss */
+/* line 81, ../sass/skeleton.scss */
 .container .offset-by-ten {
   padding-left: 600px;
 }
 
-/* line 86, ../sass/skeleton.scss */
+/* line 82, ../sass/skeleton.scss */
 .container .offset-by-eleven {
   padding-left: 660px;
 }
 
-/* line 87, ../sass/skeleton.scss */
+/* line 83, ../sass/skeleton.scss */
 .container .offset-by-twelve {
   padding-left: 720px;
 }
 
-/* line 88, ../sass/skeleton.scss */
+/* line 84, ../sass/skeleton.scss */
 .container .offset-by-thirteen {
   padding-left: 780px;
 }
 
-/* line 89, ../sass/skeleton.scss */
+/* line 85, ../sass/skeleton.scss */
 .container .offset-by-fourteen {
   padding-left: 840px;
 }
 
-/* line 90, ../sass/skeleton.scss */
+/* line 86, ../sass/skeleton.scss */
 .container .offset-by-fifteen {
   padding-left: 900px;
 }
@@ -231,199 +226,199 @@
 ================================================== */
 /* Note: Design for a width of 768px */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 118, ../sass/skeleton.scss */
+  /* line 114, ../sass/skeleton.scss */
   .container {
     width: 768px;
   }
 
-  /* line 120, ../sass/skeleton.scss */
+  /* line 116, ../sass/skeleton.scss */
   .container .column,
   .container .columns {
     margin-left: 10px;
     margin-right: 10px;
   }
 
-  /* line 121, ../sass/skeleton.scss */
+  /* line 117, ../sass/skeleton.scss */
   .column.alpha, .columns.alpha {
     margin-left: 0;
     margin-right: 10px;
   }
 
-  /* line 122, ../sass/skeleton.scss */
+  /* line 118, ../sass/skeleton.scss */
   .column.omega, .columns.omega {
     margin-right: 0;
     margin-left: 10px;
   }
 
-  /* line 123, ../sass/skeleton.scss */
+  /* line 119, ../sass/skeleton.scss */
   .alpha.omega {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 54, ../sass/skeleton.scss */
+  /* line 50, ../sass/skeleton.scss */
   .container .one.column,
   .container .one.columns {
     width: 28px;
   }
 
-  /* line 55, ../sass/skeleton.scss */
+  /* line 51, ../sass/skeleton.scss */
   .container .two.columns {
     width: 76px;
   }
 
-  /* line 56, ../sass/skeleton.scss */
+  /* line 52, ../sass/skeleton.scss */
   .container .three.columns {
     width: 124px;
   }
 
-  /* line 57, ../sass/skeleton.scss */
+  /* line 53, ../sass/skeleton.scss */
   .container .four.columns {
     width: 172px;
   }
 
-  /* line 58, ../sass/skeleton.scss */
+  /* line 54, ../sass/skeleton.scss */
   .container .five.columns {
     width: 220px;
   }
 
-  /* line 59, ../sass/skeleton.scss */
+  /* line 55, ../sass/skeleton.scss */
   .container .six.columns {
     width: 268px;
   }
 
-  /* line 60, ../sass/skeleton.scss */
+  /* line 56, ../sass/skeleton.scss */
   .container .seven.columns {
     width: 316px;
   }
 
-  /* line 61, ../sass/skeleton.scss */
+  /* line 57, ../sass/skeleton.scss */
   .container .eight.columns {
     width: 364px;
   }
 
-  /* line 62, ../sass/skeleton.scss */
+  /* line 58, ../sass/skeleton.scss */
   .container .nine.columns {
     width: 412px;
   }
 
-  /* line 63, ../sass/skeleton.scss */
+  /* line 59, ../sass/skeleton.scss */
   .container .ten.columns {
     width: 460px;
   }
 
-  /* line 64, ../sass/skeleton.scss */
+  /* line 60, ../sass/skeleton.scss */
   .container .eleven.columns {
     width: 508px;
   }
 
-  /* line 65, ../sass/skeleton.scss */
+  /* line 61, ../sass/skeleton.scss */
   .container .twelve.columns {
     width: 556px;
   }
 
-  /* line 66, ../sass/skeleton.scss */
+  /* line 62, ../sass/skeleton.scss */
   .container .thirteen.columns {
     width: 604px;
   }
 
-  /* line 67, ../sass/skeleton.scss */
+  /* line 63, ../sass/skeleton.scss */
   .container .fourteen.columns {
     width: 652px;
   }
 
-  /* line 68, ../sass/skeleton.scss */
+  /* line 64, ../sass/skeleton.scss */
   .container .fifteen.columns {
     width: 700px;
   }
 
-  /* line 69, ../sass/skeleton.scss */
+  /* line 65, ../sass/skeleton.scss */
   .container .sixteen.columns {
     width: 748px;
   }
 
-  /* line 72, ../sass/skeleton.scss */
+  /* line 68, ../sass/skeleton.scss */
   .container .one-third.column {
     width: 236px;
   }
 
-  /* line 73, ../sass/skeleton.scss */
+  /* line 69, ../sass/skeleton.scss */
   .container .two-thirds.column {
     width: 472px;
   }
 
   /* Offsets */
-  /* line 76, ../sass/skeleton.scss */
+  /* line 72, ../sass/skeleton.scss */
   .container .offset-by-one {
     padding-left: 48px;
   }
 
-  /* line 77, ../sass/skeleton.scss */
+  /* line 73, ../sass/skeleton.scss */
   .container .offset-by-two {
     padding-left: 96px;
   }
 
-  /* line 78, ../sass/skeleton.scss */
+  /* line 74, ../sass/skeleton.scss */
   .container .offset-by-three {
     padding-left: 144px;
   }
 
-  /* line 79, ../sass/skeleton.scss */
+  /* line 75, ../sass/skeleton.scss */
   .container .offset-by-four {
     padding-left: 192px;
   }
 
-  /* line 80, ../sass/skeleton.scss */
+  /* line 76, ../sass/skeleton.scss */
   .container .offset-by-five {
     padding-left: 240px;
   }
 
-  /* line 81, ../sass/skeleton.scss */
+  /* line 77, ../sass/skeleton.scss */
   .container .offset-by-six {
     padding-left: 288px;
   }
 
-  /* line 82, ../sass/skeleton.scss */
+  /* line 78, ../sass/skeleton.scss */
   .container .offset-by-seven {
     padding-left: 336px;
   }
 
-  /* line 83, ../sass/skeleton.scss */
+  /* line 79, ../sass/skeleton.scss */
   .container .offset-by-eight {
     padding-left: 384px;
   }
 
-  /* line 84, ../sass/skeleton.scss */
+  /* line 80, ../sass/skeleton.scss */
   .container .offset-by-nine {
     padding-left: 432px;
   }
 
-  /* line 85, ../sass/skeleton.scss */
+  /* line 81, ../sass/skeleton.scss */
   .container .offset-by-ten {
     padding-left: 480px;
   }
 
-  /* line 86, ../sass/skeleton.scss */
+  /* line 82, ../sass/skeleton.scss */
   .container .offset-by-eleven {
     padding-left: 528px;
   }
 
-  /* line 87, ../sass/skeleton.scss */
+  /* line 83, ../sass/skeleton.scss */
   .container .offset-by-twelve {
     padding-left: 576px;
   }
 
-  /* line 88, ../sass/skeleton.scss */
+  /* line 84, ../sass/skeleton.scss */
   .container .offset-by-thirteen {
     padding-left: 624px;
   }
 
-  /* line 89, ../sass/skeleton.scss */
+  /* line 85, ../sass/skeleton.scss */
   .container .offset-by-fourteen {
     padding-left: 672px;
   }
 
-  /* line 90, ../sass/skeleton.scss */
+  /* line 86, ../sass/skeleton.scss */
   .container .offset-by-fifteen {
     padding-left: 720px;
   }
@@ -432,18 +427,18 @@
 ================================================== */
 /* Note: Design for a width of 320px */
 @media only screen and (max-width: 767px) {
-  /* line 138, ../sass/skeleton.scss */
+  /* line 134, ../sass/skeleton.scss */
   .container {
     width: 300px;
   }
 
-  /* line 140, ../sass/skeleton.scss */
+  /* line 136, ../sass/skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0;
   }
 
-  /* line 160, ../sass/skeleton.scss */
+  /* line 156, ../sass/skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -467,7 +462,7 @@
   }
 
   /* Offsets */
-  /* line 177, ../sass/skeleton.scss */
+  /* line 173, ../sass/skeleton.scss */
   .container .offset-by-one,
   .container .offset-by-two,
   .container .offset-by-three,
@@ -490,18 +485,18 @@
 ================================================== */
 /* Note: Design for a width of 480px */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 191, ../sass/skeleton.scss */
+  /* line 187, ../sass/skeleton.scss */
   .container {
     width: 420px;
   }
 
-  /* line 193, ../sass/skeleton.scss */
+  /* line 189, ../sass/skeleton.scss */
   .container .columns,
   .container .column {
     margin: 0;
   }
 
-  /* line 213, ../sass/skeleton.scss */
+  /* line 209, ../sass/skeleton.scss */
   .container .one.column,
   .container .one.columns,
   .container .two.columns,
@@ -527,7 +522,7 @@
 /* #Clearing
 ================================================== */
 /* Self Clearing Goodness */
-/* line 220, ../sass/skeleton.scss */
+/* line 216, ../sass/skeleton.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -538,7 +533,7 @@
 
 /* Use clearfix class on parent to clear nested columns,
 or wrap each row of columns in a <div class="row"> */
-/* line 227, ../sass/skeleton.scss */
+/* line 223, ../sass/skeleton.scss */
 .clearfix:before,
 .clearfix:after,
 .row:before,
@@ -551,20 +546,20 @@ or wrap each row of columns in a <div class="row"> */
   height: 0;
 }
 
-/* line 235, ../sass/skeleton.scss */
+/* line 231, ../sass/skeleton.scss */
 .row:after,
 .clearfix:after {
   clear: both;
 }
 
-/* line 238, ../sass/skeleton.scss */
+/* line 234, ../sass/skeleton.scss */
 .row,
 .clearfix {
   zoom: 1;
 }
 
 /* You can also use a <br class="clear" /> to clear columns */
-/* line 242, ../sass/skeleton.scss */
+/* line 238, ../sass/skeleton.scss */
 .clear {
   clear: both;
   display: block;
