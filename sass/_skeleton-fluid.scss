@@ -27,18 +27,31 @@
 
 $fluidContainerWidth : 80%; //Width of outer container
 $fluidColumnNumber : 16; //Number of columns in your grid system - REMEMBER if you add more columns add more CSS to @mixin columnClasses
-$fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be half this number as it works of margins
+$fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be half this number as it works off margins
+$fluidGutterWidthAlphaOmega : 2%; //Width of gutter for alpha/omega
 
 @mixin fluidColumnWidth($width) { //This calculates the width of each column minus the margins - $width = the number of columns wide
     width: ((100% - $fluidColumnNumber * $fluidGutterWidth) / $fluidColumnNumber ) * $width + (($width - 1) * $fluidGutterWidth);
+}
+
+@mixin fluidColumnAlphaOmega($width) { //This calculates the width of each column minus the margins - $width = the number of columns wide
+    width: ((100% - $fluidColumnNumber * $fluidGutterWidthAlphaOmega) / $fluidColumnNumber ) * $width + (($width - 1) * $fluidGutterWidthAlphaOmega);
 }
 
 @mixin fluidColumnThirds() { //This calculates the width of a column which is a third of the total width
     width: (100% - (3 * $fluidGutterWidth)) / 3;
 }
 
+@mixin fluidColumnThirdsAlphaOmega() { //This calculates the width of a column which is a third of the total width
+    width: (100% - (3 * $fluidGutterWidthAlphaOmega)) / 3;
+}
+
 @mixin fluidColumnTwoThirds() { //This calculates the width of a column which is a two thirds of the total width
     width: ((100% - (3 * $fluidGutterWidth)) / 3) * 2;
+}
+
+@mixin fluidColumnTwoThirdsAlphaOmega() { //This calculates the width of a column which is a two thirds of the total width
+    width: ((100% - (3 * $fluidGutterWidthAlphaOmega)) / 3) * 2;
 }
 
 @mixin fluidColumnOffset($offset) { //This calculates the width of the offset - $offset = the number of columns the column is offset by
@@ -84,7 +97,49 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
     .fluid-container .offset-by-thirteen              { @include fluidColumnOffset(13); }
     .fluid-container .offset-by-fourteen              { @include fluidColumnOffset(14); }
     .fluid-container .offset-by-fifteen               { @include fluidColumnOffset(15); }
+
+    //alpha omega column calculation
+
+    .fluid-container .one.column.alpha,
+    .fluid-container .one.column.omega,
+    .fluid-container .one.columns.alpha,
+    .fluid-container .one.columns.omega                     { @include fluidColumnAlphaOmega(1); }
+    .fluid-container .two.columns.alpha,
+    .fluid-container .two.columns.omega                     { @include fluidColumnAlphaOmega(2); }
+    .fluid-container .three.columns.alpha,
+    .fluid-container .three.columns.omega                   { @include fluidColumnAlphaOmega(3); }
+    .fluid-container .four.columns.alpha,
+    .fluid-container .four.columns.omega                    { @include fluidColumnAlphaOmega(4); }
+    .fluid-container .five.columns.alpha,
+    .fluid-container .five.columns.omega                    { @include fluidColumnAlphaOmega(5); }
+    .fluid-container .six.columns.alpha,
+    .fluid-container .six.columns.omega                     { @include fluidColumnAlphaOmega(6); }
+    .fluid-container .seven.columns.alpha,
+    .fluid-container .seven.columns.omega                   { @include fluidColumnAlphaOmega(7); }
+    .fluid-container .eight.columns.alpha,
+    .fluid-container .eight.columns.omega                   { @include fluidColumnAlphaOmega(8); }
+    .fluid-container .nine.columns.alpha,
+    .fluid-container .nine.columns.omega                    { @include fluidColumnAlphaOmega(9); }
+    .fluid-container .ten.columns.alpha,
+    .fluid-container .ten.columns.omega                     { @include fluidColumnAlphaOmega(10); }
+    .fluid-container .eleven.columns.alpha,
+    .fluid-container .eleven.columns.omega                  { @include fluidColumnAlphaOmega(11); }
+    .fluid-container .twelve.columns.alpha,
+    .fluid-container .twelve.columns.omega                  { @include fluidColumnAlphaOmega(12); }
+    .fluid-container .thirteen.columns.alpha,
+    .fluid-container .thirteen.columns.omega                { @include fluidColumnAlphaOmega(13); }
+    .fluid-container .fourteen.columns.alpha,
+    .fluid-container .fourteen.columns.omega                { @include fluidColumnAlphaOmega(14); }
+    .fluid-container .fifteen.columns.alpha,
+    .fluid-container .fifteen.columns.omega                 { @include fluidColumnAlphaOmega(15); }
+    .fluid-container .sixteen.columns.alpha,
+    .fluid-container .sixteen.columns.omega                 { @include fluidColumnAlphaOmega(16); }
     // If you change the $columnNumber variable you will need to create additional CSS here to accomodate for the extra columns
+
+    .fluid-container .one-third.column.alpha,
+    .fluid-container .one-third.column.omega                { @include fluidColumnThirdsAlphaOmega(); }
+    .fluid-container .two-thirds.column.alpha,
+    .fluid-container .two-thirds.column.omega               { @include fluidColumnTwoThirdsAlphaOmega(); }
 }
 
 /* #Base fluid Grid
@@ -97,6 +152,7 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
     /* Nested Column Classes */
     .column.alpha, .columns.alpha               { margin-left: 0; }
     .column.omega, .columns.omega               { margin-right: 0; }
+    .alpha.omega                                { width: 100%; }
 
     /* Base fluid Grid */
     @include fluidColumnClasses();
@@ -107,10 +163,10 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
 
     /* Note: Design for a width of 768px */
 
-    @media only screen and (min-width: 768px) and (max-width: 959px) {
+    @media only screen and (min-width: 767px) and (max-width: 959px) {
         $fluidContainerWidth : 100%; //Width of outer container should be 100% for tablet
 
-        .fluid-container                                  { width: $fluidContainerWidth; }
+        .fluid-container                                  { width: $fluidContainerWidth - $fluidGutterWidth; }
         .fluid-container .column,
         .fluid-container .columns                         { margin-left: $fluidGutterWidth / 2; margin-right: $fluidGutterWidth / 2;  }
         .fluid-container.alpha, .columns.alpha               { margin-left: 0; margin-right: $fluidGutterWidth / 2; }
@@ -130,9 +186,9 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
 
     @media only screen and (max-width: 767px) {
 
-        .fluid-container { width: $fluidContainerWidth - $fluidGutterWidth;; }
+        .fluid-container { width: $fluidContainerWidth - $fluidGutterWidth; }
         .fluid-container .columns,
-        .fluid-container .column { margin: $fluidGutterWidth / 2; }
+        .fluid-container .column { margin: 0; }
 
         .fluid-container .one.column,
         .fluid-container .one.columns,
@@ -152,7 +208,42 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
         .fluid-container .fifteen.columns,
         .fluid-container .sixteen.columns,
         .fluid-container .one-third.column,
-        .fluid-container .two-thirds.column  { width: $fluidContainerWidth - $fluidGutterWidth; }
+        .fluid-container .one.column.alpha,
+        .fluid-container .one.column.omega,
+        .fluid-container .one.columns.alpha,
+        .fluid-container .one.columns.omega,
+        .fluid-container .two.columns.alpha,
+        .fluid-container .two.columns.omega,
+        .fluid-container .three.columns.alpha,
+        .fluid-container .three.columns.omega,
+        .fluid-container .four.columns.alpha,
+        .fluid-container .four.columns.omega,
+        .fluid-container .five.columns.alpha,
+        .fluid-container .five.columns.omega,
+        .fluid-container .six.columns.alpha,
+        .fluid-container .six.columns.omega,
+        .fluid-container .seven.columns.alpha,
+        .fluid-container .seven.columns.omega,
+        .fluid-container .eight.columns.alpha,
+        .fluid-container .eight.columns.omega,
+        .fluid-container .nine.columns.alpha,
+        .fluid-container .nine.columns.omega,
+        .fluid-container .ten.columns.alpha,
+        .fluid-container .ten.columns.omega,
+        .fluid-container .eleven.columns.alpha,
+        .fluid-container .eleven.columns.omega,
+        .fluid-container .twelve.columns.alpha,
+        .fluid-container .twelve.columns.omega,
+        .fluid-container .thirteen.columns.alpha,
+        .fluid-container .thirteen.columns.omega,
+        .fluid-container .fourteen.columns.alpha,
+        .fluid-container .fourteen.columns.omega,
+        .fluid-container .fifteen.columns.alpha,
+        .fluid-container .fifteen.columns.omega,
+        .fluid-container .sixteen.columns.alpha,
+        .fluid-container .sixteen.columns.omega,
+        .fluid-container .one-third.column,
+        .fluid-container .two-thirds.column  { width: 100%; }
 
         /* Offsets */
         .fluid-container .offset-by-one,
@@ -181,9 +272,9 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
 
     @media only screen and (min-width: 480px) and (max-width: 767px) {
         
-        .fluid-container { width: $fluidContainerWidth - $fluidGutterWidth;; }
+        .fluid-container { width: $fluidContainerWidth - $fluidGutterWidth; }
         .fluid-container .columns,
-        .fluid-container .column { margin: $fluidGutterWidth / 2; }
+        .fluid-container .column { margin: 0; }
 
         .fluid-container .one.column,
         .fluid-container .one.columns,
@@ -203,5 +294,40 @@ $fluidGutterWidth : 4%; //Width of gutter - left and right outer gutters will be
         .fluid-container .fifteen.columns,
         .fluid-container .sixteen.columns,
         .fluid-container .one-third.column,
-        .fluid-container .two-thirds.column { width: $fluidContainerWidth - $fluidGutterWidth; }
+        .fluid-container .one.column.alpha,
+        .fluid-container .one.column.omega,
+        .fluid-container .one.columns.alpha,
+        .fluid-container .one.columns.omega,
+        .fluid-container .two.columns.alpha,
+        .fluid-container .two.columns.omega,
+        .fluid-container .three.columns.alpha,
+        .fluid-container .three.columns.omega,
+        .fluid-container .four.columns.alpha,
+        .fluid-container .four.columns.omega,
+        .fluid-container .five.columns.alpha,
+        .fluid-container .five.columns.omega,
+        .fluid-container .six.columns.alpha,
+        .fluid-container .six.columns.omega,
+        .fluid-container .seven.columns.alpha,
+        .fluid-container .seven.columns.omega,
+        .fluid-container .eight.columns.alpha,
+        .fluid-container .eight.columns.omega,
+        .fluid-container .nine.columns.alpha,
+        .fluid-container .nine.columns.omega,
+        .fluid-container .ten.columns.alpha,
+        .fluid-container .ten.columns.omega,
+        .fluid-container .eleven.columns.alpha,
+        .fluid-container .eleven.columns.omega,
+        .fluid-container .twelve.columns.alpha,
+        .fluid-container .twelve.columns.omega,
+        .fluid-container .thirteen.columns.alpha,
+        .fluid-container .thirteen.columns.omega,
+        .fluid-container .fourteen.columns.alpha,
+        .fluid-container .fourteen.columns.omega,
+        .fluid-container .fifteen.columns.alpha,
+        .fluid-container .fifteen.columns.omega,
+        .fluid-container .sixteen.columns.alpha,
+        .fluid-container .sixteen.columns.omega,
+        .fluid-container .one-third.column,
+        .fluid-container .two-thirds.column  { width: 100%; }
     }
